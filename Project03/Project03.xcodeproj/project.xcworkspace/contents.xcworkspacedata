@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "self:/Users/matflow/Documents/100DaysofSwiftProjects/Project03/Project03.xcodeproj">
    </FileRef>
 </Workspace>
