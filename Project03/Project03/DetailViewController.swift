@@ -20,6 +20,8 @@ class DetailViewController: UIViewController {
         title = imagePosition
         navigationItem.largeTitleDisplayMode = .never
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+        
         if let image = selectedImage {
             imageView.image = UIImage(named: image)
         }
