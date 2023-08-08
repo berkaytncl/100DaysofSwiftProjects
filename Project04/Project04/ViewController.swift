@@ -12,7 +12,8 @@ final class ViewController: UIViewController {
 
     private var webView: WKWebView!
     private var progressView: UIProgressView!
-        
+    private var websites = ["apple.com", "hackingwithswift.com"]
+            
     override func loadView() {
         webView = WKWebView()
         webView.navigationDelegate = self
@@ -36,15 +37,18 @@ final class ViewController: UIViewController {
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
 
-        let url = URL(string: "https://hackingwithswift.com")!
+        let url = URL(string: "https://" + websites[0])!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
     }
     
     @objc func openTapped() {
         let ac = UIAlertController(title: "Open page...", message: nil, preferredStyle: .actionSheet)
-        ac.addAction(UIAlertAction(title: "apple.com", style: .default, handler: openPage))
-        ac.addAction(UIAlertAction(title: "hackingwithswift.com", style: .default, handler: openPage))
+        
+        for website in websites {
+            ac.addAction(UIAlertAction(title: website, style: .default, handler: openPage))
+        }
+        
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         ac.popoverPresentationController?.sourceItem = navigationItem.rightBarButtonItem
         present(ac, animated: true)
