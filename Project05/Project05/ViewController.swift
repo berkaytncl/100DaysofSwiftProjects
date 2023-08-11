@@ -104,7 +104,7 @@ extension ViewController {
         let range = NSRange(location: 0, length: word.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         
-        return misspelledRange.location == NSNotFound
+        return misspelledRange.location == NSNotFound && word.count >= 3
     }
     
     private func errorAlert(title errorTitle: String, message errorMessage: String) {
