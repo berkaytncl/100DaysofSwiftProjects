@@ -52,9 +52,28 @@ extension ViewController {
     private func submit(_ answer: String) {
         let lowerAnswer = answer.lowercased()
         
-        guard isPossible(word: lowerAnswer) else { return }
-        guard isOriginal(word: lowerAnswer) else { return }
-        guard isReal(word: lowerAnswer) else { return }
+        let errorTitle: String
+        let errorMessage: String
+        
+        guard isPossible(word: lowerAnswer) else {
+            guard let title = title else { return }
+            errorTitle = "Word not possible"
+            errorMessage = "You can't spell that word from \(title.lowercased())."
+            errorAlert(title: errorTitle, message: errorMessage)
+            return
+        }
+        guard isOriginal(word: lowerAnswer) else {
+            errorTitle = "Word already used"
+            errorMessage = "Be more original!"
+            errorAlert(title: errorTitle, message: errorMessage)
+            return
+        }
+        guard isReal(word: lowerAnswer) else {
+            errorTitle = "Word not recognized"
+            errorMessage = "You can't just make them up, you know!"
+            errorAlert(title: errorTitle, message: errorMessage)
+            return
+        }
         
         usedWords.insert(answer, at: 0)
 
@@ -85,6 +104,12 @@ extension ViewController {
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         
         return misspelledRange.location == NSNotFound
+    }
+    
+    private func errorAlert(title errorTitle: String, message errorMessage: String) {
+        let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
 }
 
