@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Project02
+//  Project06
 //
 //  Created by Berkay Tuncel on 5.08.2023.
 //

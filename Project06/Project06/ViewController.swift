@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Project02
+//  Project06
 //
 //  Created by Berkay Tuncel on 5.08.2023.
 //
@@ -44,9 +44,9 @@ final class ViewController: UIViewController {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
         
-        button1.setImage(UIImage(named: countries[0]), for: .normal)
-        button2.setImage(UIImage(named: countries[1]), for: .normal)
-        button3.setImage(UIImage(named: countries[2]), for: .normal)
+        button1.setBackgroundImage(UIImage(named: countries[0]), for: .normal)
+        button2.setBackgroundImage(UIImage(named: countries[1]), for: .normal)
+        button3.setBackgroundImage(UIImage(named: countries[2]), for: .normal)
         
         title = countries[correctAnswer].uppercased()
         
