@@ -17,8 +17,10 @@ final class ViewController: UITableViewController {
         let urlString: String
         
         if navigationController?.tabBarItem.tag == 0 {
+            title = "Hacking with Swift"
             urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
         } else {
+            title = "Whitehouse"
             urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
         }
         
@@ -30,19 +32,23 @@ final class ViewController: UITableViewController {
                 }
                 
                 guard let data = data else {
-                    print("No data received")
+                    self.showError()
                     return
                 }
                 
                 self.parse(json: data)
             }.resume()
         }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(pageDetail))
     }
+    
     private func showError() {
         let ac = UIAlertController(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
     }
+    
     private func parse(json: Data) {
         let decoder = JSONDecoder()
         
@@ -52,6 +58,12 @@ final class ViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    @objc private func pageDetail() {
+        let ac = UIAlertController(title: "\(title!) Samples", message: nil, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
 }
 
