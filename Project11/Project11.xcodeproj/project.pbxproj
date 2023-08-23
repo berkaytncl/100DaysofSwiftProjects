@@ -14,6 +14,7 @@
 		EB76276B2A94A6A600DF9DA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB7627692A94A6A600DF9DA3 /* Main.storyboard */; };
 		EB76276D2A94A6A600DF9DA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB76276C2A94A6A600DF9DA3 /* Assets.xcassets */; };
 		EB7627702A94A6A600DF9DA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB76276E2A94A6A600DF9DA3 /* LaunchScreen.storyboard */; };
+		EBB8163F2A969F34005680BD /* FireParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBB8163E2A969F34005680BD /* FireParticles.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		EB76276A2A94A6A600DF9DA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB76276C2A94A6A600DF9DA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB76276F2A94A6A600DF9DA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EBB8163E2A969F34005680BD /* FireParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticles.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				EB7627692A94A6A600DF9DA3 /* Main.storyboard */,
 				EB76276C2A94A6A600DF9DA3 /* Assets.xcassets */,
 				EB76276E2A94A6A600DF9DA3 /* LaunchScreen.storyboard */,
+				EBB8163E2A969F34005680BD /* FireParticles.sks */,
 			);
 			path = Project11;
 			sourceTree = "<group>";
@@ -128,6 +131,7 @@
 			files = (
 				EB76276B2A94A6A600DF9DA3 /* Main.storyboard in Resources */,
 				EB7627622A94A6A600DF9DA3 /* GameScene.sks in Resources */,
+				EBB8163F2A969F34005680BD /* FireParticles.sks in Resources */,
 				EB76276D2A94A6A600DF9DA3 /* Assets.xcassets in Resources */,
 				EB7627702A94A6A600DF9DA3 /* LaunchScreen.storyboard in Resources */,
 			);
