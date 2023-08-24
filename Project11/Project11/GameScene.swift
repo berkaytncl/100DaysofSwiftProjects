@@ -7,6 +7,16 @@
 
 import SpriteKit
 
+enum BallColors: String, CaseIterable {
+    case ballBlue
+    case ballCyan
+    case ballGreen
+    case ballGrey
+    case ballPurple
+    case ballRed
+    case ballYellow
+}
+
 final class GameScene: SKScene {
     
     private var scoreLabel: SKLabelNode!
@@ -78,6 +88,9 @@ final class GameScene: SKScene {
                 addChild(box)
             } else {
                 let ball = SKSpriteNode(imageNamed: "ballRed")
+                let cases = Array(BallColors.allCases)
+                let randomIndex = Int.random(in: 0..<cases.count)
+                let ball = SKSpriteNode(imageNamed: cases[randomIndex].rawValue)
                 ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
                 ball.physicsBody?.restitution = 0.4
                 ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
