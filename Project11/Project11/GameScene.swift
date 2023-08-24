@@ -87,7 +87,7 @@ final class GameScene: SKScene {
                 box.physicsBody?.isDynamic = false
                 addChild(box)
             } else {
-                let ball = SKSpriteNode(imageNamed: "ballRed")
+                guard location.y > 550 else { return }
                 let cases = Array(BallColors.allCases)
                 let randomIndex = Int.random(in: 0..<cases.count)
                 let ball = SKSpriteNode(imageNamed: cases[randomIndex].rawValue)
