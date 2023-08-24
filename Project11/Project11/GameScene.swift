@@ -20,14 +20,14 @@ enum BallColors: String, CaseIterable {
 final class GameScene: SKScene {
     
     private var scoreLabel: SKLabelNode!
-    
+    private var editLabel: SKLabelNode!
     private var score = 0 {
         didSet {
             scoreLabel.text = "Score: \(score)"
         }
     }
-    
-    private var editLabel: SKLabelNode!
+    private var ballUsed = 0
+    private var ballCapacity = 5
     
     var editingMode: Bool = false {
         didSet {
@@ -85,9 +85,10 @@ final class GameScene: SKScene {
                 
                 box.physicsBody = SKPhysicsBody(rectangleOf: box.size)
                 box.physicsBody?.isDynamic = false
+                box.name = "box"
                 addChild(box)
             } else {
-                guard location.y > 550 else { return }
+                guard location.y > 550, ballUsed < ballCapacity else { return }
                 let cases = Array(BallColors.allCases)
                 let randomIndex = Int.random(in: 0..<cases.count)
                 let ball = SKSpriteNode(imageNamed: cases[randomIndex].rawValue)
@@ -97,6 +98,7 @@ final class GameScene: SKScene {
                 ball.position = location
                 ball.name = "ball"
                 addChild(ball)
+                ballUsed += 1
             }
         }
     }
@@ -139,22 +141,29 @@ extension GameScene {
         slotGlow.run(spinForever)
     }
     
-    func collision(between ball: SKNode, object: SKNode) {
+    private func collision(between ball: SKNode, object: SKNode) {
         if object.name == "good" {
             destroy(ball: ball)
+            ballCapacity += 1
             score += 1
         } else if object.name == "bad" {
             destroy(ball: ball)
             score -= 1
+        } else if object.name == "box" {
+            destroy(box: object)
         }
     }
     
-    func destroy(ball: SKNode) {
+    private func destroy(ball: SKNode) {
         if let fireParticles = SKEmitterNode(fileNamed: "FireParticles") {
             fireParticles.position = ball.position
             addChild(fireParticles)
         }
         ball.removeFromParent()
+    }
+    
+    private func destroy(box: SKNode) {
+        box.removeFromParent()
     }
 }
 
