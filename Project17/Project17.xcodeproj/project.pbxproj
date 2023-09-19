@@ -9,24 +9,26 @@
 /* Begin PBXBuildFile section */
 		EBAC957B2AB995D500ECC7B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAC957A2AB995D500ECC7B5 /* AppDelegate.swift */; };
 		EBAC957D2AB995D500ECC7B5 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBAC957C2AB995D500ECC7B5 /* GameScene.sks */; };
-		EBAC957F2AB995D500ECC7B5 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBAC957E2AB995D500ECC7B5 /* Actions.sks */; };
 		EBAC95812AB995D500ECC7B5 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAC95802AB995D500ECC7B5 /* GameScene.swift */; };
 		EBAC95832AB995D500ECC7B5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAC95822AB995D500ECC7B5 /* GameViewController.swift */; };
 		EBAC95862AB995D500ECC7B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBAC95842AB995D500ECC7B5 /* Main.storyboard */; };
 		EBAC95882AB995D600ECC7B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBAC95872AB995D600ECC7B5 /* Assets.xcassets */; };
 		EBAC958B2AB995D600ECC7B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBAC95892AB995D600ECC7B5 /* LaunchScreen.storyboard */; };
+		EBAC95932AB9B9EF00ECC7B5 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBAC95912AB9B9EE00ECC7B5 /* explosion.sks */; };
+		EBAC95942AB9B9EF00ECC7B5 /* starfield.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBAC95922AB9B9EF00ECC7B5 /* starfield.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EBAC95772AB995D500ECC7B5 /* Project17.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project17.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBAC957A2AB995D500ECC7B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBAC957C2AB995D500ECC7B5 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		EBAC957E2AB995D500ECC7B5 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		EBAC95802AB995D500ECC7B5 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		EBAC95822AB995D500ECC7B5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		EBAC95852AB995D500ECC7B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBAC95872AB995D600ECC7B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBAC958A2AB995D600ECC7B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EBAC95912AB9B9EE00ECC7B5 /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
+		EBAC95922AB9B9EF00ECC7B5 /* starfield.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = starfield.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,12 +63,13 @@
 			children = (
 				EBAC957A2AB995D500ECC7B5 /* AppDelegate.swift */,
 				EBAC957C2AB995D500ECC7B5 /* GameScene.sks */,
-				EBAC957E2AB995D500ECC7B5 /* Actions.sks */,
 				EBAC95802AB995D500ECC7B5 /* GameScene.swift */,
 				EBAC95822AB995D500ECC7B5 /* GameViewController.swift */,
 				EBAC95842AB995D500ECC7B5 /* Main.storyboard */,
 				EBAC95872AB995D600ECC7B5 /* Assets.xcassets */,
 				EBAC95892AB995D600ECC7B5 /* LaunchScreen.storyboard */,
+				EBAC95912AB9B9EE00ECC7B5 /* explosion.sks */,
+				EBAC95922AB9B9EF00ECC7B5 /* starfield.sks */,
 			);
 			path = Project17;
 			sourceTree = "<group>";
@@ -132,8 +135,9 @@
 				EBAC95862AB995D500ECC7B5 /* Main.storyboard in Resources */,
 				EBAC957D2AB995D500ECC7B5 /* GameScene.sks in Resources */,
 				EBAC95882AB995D600ECC7B5 /* Assets.xcassets in Resources */,
+				EBAC95932AB9B9EF00ECC7B5 /* explosion.sks in Resources */,
 				EBAC958B2AB995D600ECC7B5 /* LaunchScreen.storyboard in Resources */,
-				EBAC957F2AB995D500ECC7B5 /* Actions.sks in Resources */,
+				EBAC95942AB9B9EF00ECC7B5 /* starfield.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
