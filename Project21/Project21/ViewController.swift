@@ -8,7 +8,7 @@
 import UIKit
 import UserNotifications
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,8 @@ class ViewController: UIViewController {
     }
     
     @objc private func scheduleLocal() {
+        registerCategories()
+        
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
         
@@ -50,5 +52,35 @@ class ViewController: UIViewController {
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         center.add(request)
     }
+    
+    private func registerCategories() {
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        
+        let show = UNNotificationAction(identifier: "show", title: "Tell me more...", options: .foreground)
+        let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [], options: [])
+        
+        center.setNotificationCategories([category])
+    }
 }
 
+extension ViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        
+        if let customData = userInfo["customData"] as? String {
+            print("Custom data received: \(customData)")
+            switch response.actionIdentifier {
+            case UNNotificationDefaultActionIdentifier:
+                // the user swiped to unlock
+                print("Default identifier")
+            case "show":
+                print("Show more information...")
+            default:
+                break
+            }
+        }
+        
+        completionHandler()
+    }
+}
